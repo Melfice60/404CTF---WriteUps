@@ -1,0 +1,12 @@
+Analyse Forensique
+
+On rentre dans le dur. On récupère le fichier .pcapng et on le passe dans Wireshark.
+Le fichier ne recense que des requêtes ICMP entre deux postes.
+
+Le seul indice se trouve dans les paquets de données envoyés dans les requêtes, très inconstants en longueur.
+
+J'ai perdu quelques minutes à verifier si les paquets en question contenait des données mais rien de pertinent.
+Par contre, un pattern est apparu dans les longueurs de paquets.
+Le nombre de bits des données du premier paquet est de 52, le second 48, le troisième 52, etc... Ce qui pourrait correspondre à 404
+
+On récupère les longueurs de tous les paquets, on passe le tout dans Cyberchef avec From Decimal comme recette, et hop, un beau flag.
