@@ -1,0 +1,20 @@
+Analyse Forensique
+
+Toujours le même .pcapng que dans les challenges 1 et 2 du même nom.
+
+Cette fois on nous signale que le contenu des fichiers doit être récupéré, mais que certains paquets ont pu se perdre suite à une instabilité de la capture.
+
+Les quatres fichiers précédents étaient :
+un .txt (rien d'intéressant dedans une fois reconstruit depuis l'hexadécimal)
+un .png (le logo d'hallebarde, a priori sans intérêt également)
+exfiltration.py (qui s'est réuploadé sans changement de son contenu)
+un .pdf (n'affichant rien à l'ouverture, malgré des streams illisibles)
+
+J'ai étudié la structure des .pdf, et ait pu remarqué que l'object 10 et 11 avait "fusionné" suite à la perte d'un paquet.
+Malgré la reconstruction, je n'ai pas obtenu d'affichage.
+
+
+
+
+(Après lecture d'autres write-ups concernant ce challenge, j'ai compris que je n'avais pas reconstruit correctement le xref en fin de pdf.
+C'est la raison de l'absence d'affichage du flag)
