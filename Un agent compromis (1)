@@ -1,0 +1,9 @@
+Analyse Forensique
+
+Un nouveau fichier de capture pour Wireshark, on retourne observer les échanges
+
+On recherche un fichier téléchargé, ça peut donc être très rapide, et ça va l'être.
+On filtre les requête HTTP, et hop, on est passé de 36000 paquets à 90.
+
+Dans le tas, on remarque rapidement un exfiltration.py hosté par hallebarde.
+Dans le paquet suivant, grace au filtre, on tombe sur son contenu, avec le flag caché en toute fin.
