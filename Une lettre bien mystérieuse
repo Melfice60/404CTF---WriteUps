@@ -1,0 +1,16 @@
+Cryptanalyse
+
+Je ne dispose pas encore des connaissances théoriques pour casser un hash, ce challenge de cryptanalyse était donc un des seuls à ma portée.
+
+On récupère une lettre encodée par Hallebarde dans un langue asiatique non définie, il va falloir la décoder.
+Je me suis casser les dents sur une tentative de traduction (omme à peu près tous les participants j'imagine)
+Tout ce que cela m'a appris c'est qu'il s'agit probablement de Tamil, mais le texte était intraduisible en l'état.
+
+J'ai fini par supposer que l'utilisation de l'alphabet tamil ne servait qu'à cacher un autre texte par remplacement.
+
+La première et la dernière ligne étant strictement identique, je me suis rappelé les circonstances des premières traductions via Enigma.
+
+J'ai cherché dans quel bloc de texte il serait possible de transposer le mot Hallebarde sur ces premières et dernières lignes.
+Le seul emplacement possible était en fin de ligne.
+
+Partant de là, la transition du texte vers sa forme décodée a été très rapide.
