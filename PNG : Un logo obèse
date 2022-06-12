@@ -1,0 +1,10 @@
+Stéganographie
+
+On dispose d'un .png ayant servi à ouvrir un canal de stéganographie, à nous de trouver ce qu'il contient.
+
+La stéganographie étant quelque chose d'assez nouveau pour moi, j'ai chercher quelques outils disponibles.
+Je suis tombé sur aperisolve.fr
+
+On upload notre .png, et on trouve très facilement l'extraction par binwalk en réponse d'un "stage2.png"
+
+Ce sera mon seul exploit en stéganographie.
