@@ -1,0 +1,17 @@
+Analyse Forensique
+
+Dans ce challenge, on récupère un nouveau .pcapng et on cherche à savoir si un document a transiter sur un poste qui a été crypté par un ransomware.
+
+Le fichier est composé d'une requête ARP, suivi d'échange TCP très chaotiques entre deux postes.
+On peut rapidement se rendre compte qu'un des postes est à l'initiative des requêtes TCP, l'autre se contente de répondre à certains flags.
+
+On applique un filtre pour ne voir que les requêtes TCP en provenance du premier poste pour y voir plus clair.
+
+En l'état, il nous reste 27355 paquets TCP faisant n'importe quoi, il y a quelque chose de bizarre du côté des flags TCP, totalement anarchiques.
+Pour vérifier la piste, on prend une dizaine de paquets, on en ressort les hexa des flags, et on passe ça à la moulinette Cyberchef avec From Hex.
+
+Résultat : 
+%PDF-1.7
+%
+
+On extrait le reste des flags pour reformer la totalité du .pdf et on obtient le flag de ce challenge.
