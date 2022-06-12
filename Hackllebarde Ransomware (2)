@@ -1,0 +1,22 @@
+Analyse Forensique
+
+Cette fois-ci on récupère un dump mémoire d'un poste victime d'un ransomware.
+Pour ce challenge, l'objectif est de retrouver :
+  1 - l'IP distante ayant servi pour la transmission des données
+  2 - le port ayant été utilisé pour les échanges sur la machine compromise
+  3 - le nom de l'executable malveillant
+  4 - le lien web d'une ressource ayant été consulté par l'attaquant
+  
+Je n'arrivais pas a retrouver le profil pour Volatility et je n'ai pas pu mettre la main sur les ressources me permettant de bypasser ce blocage
+J'ai donc testé une alternative, envoyer le .raw dans Autopsy : ça marche, mais c'est moyennement lisible, la recherch demande plus d'efforts
+
+Un filtre sur "https://" m'a permis de retrouver assez rapidement le lien youtube consulté par l'attaquant
+
+La recherche de l'IP distante a été un peu plus laborieuse. Le filtrage d'IP d'Autopsy donne beaucoup de faux positifs sur un dump mémoire.
+
+Lors des recherches j'ai aperçu un "SRV-EVIL-81" ayant généré des échanges qui du coup, m'a permis de mieux cibler la suite des recherches.
+Dans les échanges réalisés et lisibles autour de ce "SRV-EVIL-81" j'ai pu retrouver facilement son IP et le port utilisé par la machine corrompue
+
+Durant les recherches autour du serveur distant, j'ai pu mettre la main sur l'executable qui portait également un nom assez peu discret.
+
+Bref, ça n'aura pas été conventionnel ni particulièrement propre, mais j'ai rempli l'objectif.
